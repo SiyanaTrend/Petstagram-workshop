@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, resolve_url
+from pyperclip import copy
 
 from petstagram.common.models import Like
 from petstagram.photos.models import Photo
@@ -30,3 +31,11 @@ def like_functionality(request, photo_id: int):
 
     # return redirect(request.META.get('HTTP_REFERER'))
     # => when the heart button is clicked, the page returns at the beginning
+
+
+def share_functionality(request, photo_id: int):
+    copy(request.META.get('HTTP_HOST') + resolve_url('photo-details', photo_id))
+    # HTTP_HOST = http://127.0.0.1/   + photos/<int:pk>/ => http://127.0.0.1/photos/<int:pk>/
+
+    return redirect(request.META.get('HTTP_REFERER') + f'#{photo_id}')
+

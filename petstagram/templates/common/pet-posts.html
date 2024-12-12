@@ -38,7 +38,7 @@
         <!-- like and share buttons -->
         <div class="actionBtns">
             <div class="left">
-            <!-- Start Like Button -->
+                <!-- Start Like Button -->
                 <span class="heart">
                  <a href="{% url 'like' photo.pk %}">
                     <!-- if user has liked the photo -->
@@ -51,13 +51,15 @@
                  </a>
                 </span>
                 <!-- End Like Button -->
-                <a href="share">
+                <!-- Start Share Button -->
+                <a href="{% url 'share' photo.pk %}">
                     <i class="fa-solid fa-share"></i>
                 </a>
+                <!-- End Share Button -->
             </div>
         </div>
-<!-- End Like and Share Buttons -->
-    
+        <!-- End Like and Share Buttons -->
+
         <!-- Number of Likes per Photo -->
         <a href="#">
             <p class="likes">{{ photo.like_set.count }} likes</p>
