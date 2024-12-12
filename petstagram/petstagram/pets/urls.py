@@ -6,7 +6,7 @@ urlpatterns = [
     path('add/', views.pet_add, name='add-pet'),
     path('<str:username>/pet/<slug:pet_slug>/', include([
         path('', views.pet_details, name='pet-details'),
-        path('edit/', views.pet_edit, name='pet-edit'),
-        path('delete/', views.pet_delete, name='pet-delete'),
+        path('edit/', views.pet_edit, name='edit-pet'),
+        path('delete/', views.pet_delete, name='delete-pet'),
     ])),
 ]
