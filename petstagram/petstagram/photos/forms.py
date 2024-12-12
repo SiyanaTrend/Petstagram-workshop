@@ -13,8 +13,9 @@ class PhotoAddForm(PhotoBaseForm):
 
 
 class PhotoEditForm(forms.ModelForm):
-    pass
-
+    class Meta:
+        model = Photo
+        exclude = ['photo']
 
 class PhotoDeleteForm(PhotoBaseForm):
     pass
