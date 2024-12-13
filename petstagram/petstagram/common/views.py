@@ -48,6 +48,7 @@ def share_functionality(request, photo_id: int):
 
     return redirect(request.META.get('HTTP_REFERER') + f'#{photo_id}')
 
+
 def comment_functionality(request, photo_id: int):
     if request.POST:
         photo = Photo.objects.get(pk=photo_id)

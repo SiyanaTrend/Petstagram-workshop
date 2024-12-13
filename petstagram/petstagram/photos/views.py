@@ -13,9 +13,9 @@ def photo_add(request):
             form.save()
             return redirect('home')
 
-        context = {
-            'form': form,
-        }
+    context = {
+        'form': form,
+    }
 
     return render(request, 'photos/photo-add-page.html', context)
 
