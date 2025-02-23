@@ -1,1 +1,1 @@
-Django Project
+Django Project from exercises - SoftUni Django Basic course 
